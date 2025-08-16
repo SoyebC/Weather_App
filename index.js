@@ -25,10 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error("Network response was not ok");
       }
       let data = await response.json();
-      displayweather(data);
       console.log(data);
-      return data;
-      
+      displayweather(data);
     } catch (error) {
       showerror();
     }
@@ -44,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     descriptiondisplay.textContent = weather.weather[0].description;
   }
   function showerror() {
-    errormsg.classList.add("hidden");
-    weatherinfo.classList.remove("hidden");
+    errormsg.classList.remove("hidden");
+    weatherinfo.classList.add("hidden");
   }
 });
